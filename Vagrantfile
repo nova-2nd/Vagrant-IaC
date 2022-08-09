@@ -1,6 +1,7 @@
 Vagrant.configure("2") do |config|
   config.vm.provider "virtualbox" do |v|
     v.customize ["modifyvm", :id, "--graphicscontroller", "vmsvga"]
+    v.customize ["modifyvm", :id, "--nested-hw-virt", "on"]
   end
   config.vm.box = "generic/debian11"
 
