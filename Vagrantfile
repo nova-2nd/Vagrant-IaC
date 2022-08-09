@@ -5,7 +5,7 @@ Vagrant.configure("2") do |config|
   end
   config.vm.provider "hyperv" do |h|
     h.enable_virtualization_extensions = true
-    h.differencing_disk = true
+    #h.differencing_disk = true
     end
   config.vm.box = "generic/debian11"
 
