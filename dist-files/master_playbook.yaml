@@ -9,7 +9,7 @@
       key: "{{ lookup('url', 'https://github.com/nova-2nd.keys', split_lines=False) }}"
   - name: Upload files
     copy:
-      src: ./upload-files/
+      src: ../upload-files/
       dest: /
       directory_mode:
 
