@@ -1,0 +1,23 @@
+---
+- hosts: localhost
+  become: yes
+  tasks:
+  - name: Add Hashicorp apt-key
+    apt_key:
+      url: https://apt.releases.hashicorp.com/gpg
+      state: present
+  - name: Add Hashicorp repo
+    apt_repository:
+      repo: 'deb [arch=amd64] https://apt.releases.hashicorp.com bullseye main' 
+      state: present 
+      filename: hashicorp
+
+  - name: Update packages
+    apt:
+      name: "*"
+      state: latest
+      update_cache: yes
+  - name: Install packages
+    apt:
+      name:
+        - vagrant

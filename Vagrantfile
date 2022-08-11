@@ -12,7 +12,7 @@ Vagrant.configure("2") do |config|
   config.vm.define "master" do |subconfig|
     subconfig.vm.provision "ansible" do |ansible|
       ansible.verbose = "v"
-      ansible.playbook = "master_playbook.yaml"
+      ansible.playbook = "dist-files/master_playbook.yaml"
     end
   end
 end
