@@ -2,6 +2,8 @@ Vagrant.configure("2") do |config|
   config.vm.provider "virtualbox" do |v|
     v.customize ["modifyvm", :id, "--graphicscontroller", "vmsvga"]
     v.customize ["modifyvm", :id, "--nested-hw-virt", "on"]
+    v.memory = 8192
+    v.cpus = 8
   end
   config.vm.provider "hyperv" do |h|
     h.enable_virtualization_extensions = true
